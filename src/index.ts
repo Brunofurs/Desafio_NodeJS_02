@@ -38,29 +38,98 @@ app.listen(PORT, () => {
 
 	console.log('Desafio 002 - starts ...');
 	
-	const nome1:string = 'ubunru silva';
-	const idade1:number = 33;
-	const peso1:number = 88.50;
-	const altura1:number = 1.65;
-	const imcubuntuone = peso1/(altura1*altura1);
-	const endev1:boolean = true;
+	const userOne = {
+		nome1:'ubuntu silva',
+		idade1:35,
+		peso1:90,
+		altura1: 1.70,
+		isDev1:true,
+		isDev: function(){
+			if(this.isDev1 === true) //=== EXATAMENTE IGUAL true;
+			{
+				console.log(this.nome1, "is a dev")
+				return this.nome1;
+			}
+			else{
+				return this.nome1 + "is not a dev";
+			}	
+		},
+		isSilva:function()
+		{
+			if(this.nome1 === "ubuntu silva")
+			{
+				return this.nome1;
+			}else{
+				return "is not silva";
+			}
+		}
+	}				
 
-	const nome2:string = 'ubunru silva';
-	const idade2:number = 33;
-	const peso2:number = 88.50;
-	const altura2:number = 1.65;
-	const imcubuntutwo = peso2/(altura2*altura2);
-	const endev2:boolean = true;
+	const userTwo = {
+		nome1: 'ubuntu santos',
+		idade1:30,
+		peso1:80.50,
+		altura1:1.65,
+		isDev1:true,
+		isDev: function(){
+			if(this.isDev1 === true)
+			{
+				//console.log(this.nome1, "is a dev")
+				return this.nome1;
+			}
+			else{
+				return this.nome1 + "is not a dev";
+			}	
+		},
+		isSilva:function()
+		{
+			if(this.nome1 === "ubuntu silva")
+			{
+				return this.nome1;
+			}else{
+				return "is not silva";
+			}
+		}
+	}		
+	
 
-	const nome3:string = 'ubunru silva';
-	const idade3:number = 33;
-	const peso3:number = 88.50;
-	const altura3:number = 1.65;
-	const imcubuntuthree = peso3/(altura3*altura3);
-	const endev3:boolean = true;
+	const userThree = {
+		nome1: 'ubuntu silva',
+		idade1: 28,
+		peso1: 88,
+		altura1: 1.80,
+		isdev1: false,
+		isDev:function()
+		{
+			if(this.isdev1 === true)
+			{
+				return this.nome1;
+			}else{
 
-	console.log(nome1, idade1, peso1, altura1, imcubuntuone, endev1);
-	console.log(nome2, idade2, peso2, altura2, imcubuntutwo, endev2);
-	console.log(nome3, idade3, peso3, altura3, imcubuntuthree, endev3); 
+				return this.nome1 + " is not a dev";
+			}	
+		},
+		isSilva:function()
+		{
+			if(this.nome1 === "ubuntu silva")
+			{
+				return this.nome1;
+			}else{
+				return "is not silva";
+			}
+		}
+	}		
 
-});
+	const imcubuntuone = (userOne.peso1 / (userOne.altura1 * userOne.altura1)); //imcUbuntuOne 
+	const imcubuntutwo = (userTwo.peso1 / (userTwo.altura1 * userTwo.altura1)); //imcUbuntutwo
+	const imcubuntuthree = (userThree.peso1 / (userThree.altura1 * userThree.altura1)); //imcubuntuthree
+
+	console.log("Soma de idades: ", userOne.idade1 + userTwo.idade1 + userThree.idade1);
+	console.log("Agrupamento de nomes: ",userOne.nome1, ",", userTwo.nome1, ",", userThree.nome1);
+	console.log("média imc do silva: ", imcubuntuone );
+	console.log("média imc do santos: ", imcubuntutwo );
+	console.log("média imc do silva: ", imcubuntuthree );
+	console.log("Devs: ", userOne.isDev(),"and", userTwo.isDev(), "and", userThree.isDev());
+	console.log("sobrenome Silva: ",userOne.isSilva(), ",", userTwo.isSilva(), "and", userThree.isSilva() )	
+}
+);
